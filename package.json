@@ -4,11 +4,14 @@
   "description": "Gameserver management based on docker",
   "main": "index.js",
   "author": "Christopher Mühl <christopher@padarom.io>",
-  "license": "MIT",
-  "private": false,
+  "license": "CC-BY-4.0",
+  "bin": {
+    "mana": "./server/index.js"
+  },
   "scripts": {
-    "build": "rimraf dist/* && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-    "start": "npm run build && node dist/index.js"
+    "client:build": "nuxt build",
+    "client:dev": "nuxt",
+    "prepublishOnly": "client:build"
   },
   "dependencies": {
     "dockerode": "^2.5.5",
@@ -17,8 +20,8 @@
     "redis": "^2.8.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "rimraf": "^2.6.2"
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.0.3",
+    "nuxt": "^1.4.1"
   }
 }

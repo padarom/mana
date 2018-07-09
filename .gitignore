@@ -1,4 +1,3 @@
 node_modules
-dist/*
-!dist/.gitkeep
+.nuxt
 .DS_Store
