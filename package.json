@@ -1,0 +1,23 @@
+{
+  "name": "mana-tool",
+  "version": "1.0.0",
+  "description": "Gameserver management based on docker",
+  "main": "index.js",
+  "author": "Christopher Mühl <christopher@padarom.io>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "rimraf dist/* && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "start": "npm run build && node dist/index.js"
+  },
+  "dependencies": {
+    "dockerode": "^2.5.5",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "rimraf": "^2.6.2"
+  }
+}
