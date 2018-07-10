@@ -6,7 +6,7 @@
   "author": "Christopher Mühl <christopher@padarom.io>",
   "license": "CC-BY-4.0",
   "bin": {
-    "mana": "./server/index.js"
+    "mana": "./server/server.js"
   },
   "scripts": {
     "client:build": "nuxt build",
@@ -14,14 +14,23 @@
     "prepublishOnly": "client:build"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "dockerode": "^2.5.5",
     "express": "^4.16.3",
-    "morgan": "^1.9.0",
+    "nuxt": "^1.4.1",
     "redis": "^2.8.0"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
     "node-sass": "^4.9.2",
-    "sass-loader": "^7.0.3",
-    "nuxt": "^1.4.1"
+    "sass-loader": "^7.0.3"
   }
 }
