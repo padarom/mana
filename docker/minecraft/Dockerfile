@@ -3,18 +3,8 @@ FROM openjdk:8u171-jre-alpine
 LABEL author "Christopher Mühl"
 LABEL version "1.0"
 
-RUN apk add -U \
-        openssl \
-        imagemagick \
-        lsof \
-        su-exec \
-        bash \
-        curl iputils wget \
-        git \
-        jq \
-        mysql-client \
-        python python-dev py2-pip && \
-      rm -rf /var/cache/apk/*
+RUN apk add -U curl jq && \
+    rm -rf /var/cache/apk/*
 
 # Add healthcheck
 
@@ -23,4 +13,14 @@ RUN addgroup -g 1000 minecraft \
   && mkdir -m 777 /data /mods /config /plugins \
   && chown minecraft:minecraft /data /config /mods /plugins /home/minecraft
 
-EXPOSE 25565 25575
+COPY download.sh /home/minecraft
+
+WORKDIR /home/minecraft
+USER minecraft
+
+RUN ./download.sh && echo 'eula=TRUE' > eula.txt
+
+EXPOSE 25565
+VOLUME ["/home/minecraft"]
+
+ENTRYPOINT ["java", "-jar", "minecraft_server.jar"]
