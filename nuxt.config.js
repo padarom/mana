@@ -15,8 +15,7 @@ module.exports = {
     ]
   },
   css: [
-    '~/assets/css/main.css'
-    // '~/assets/scss/app.scss'
+    '~/assets/scss/main.scss'
   ],
   build: {
     vendor: ['axios'],

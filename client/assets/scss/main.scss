@@ -1,0 +1,53 @@
+@import 'variables';
+
+html, body, #__layout, #__nuxt {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: $color-2;
+}
+
+#app {
+  height: 100%;
+  display: grid;
+
+  grid-template:
+    [row1-start] "logo header" 80px [row1-end]
+    [row2-start] "menu content" auto [row2-end]
+    / $sidebar-width auto;
+}
+
+#content {
+  grid-area: content;
+}
+
+#header {
+  grid-area: header;
+}
+
+#navigation {
+  grid-area: menu;
+  padding-top: 10px;
+  background: $color-3;
+}
+
+#title {
+  grid-area: logo;
+  background: $color-1;
+  margin: 0;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px ($sidebar-width / 2) 0 ($sidebar-width / 2);
+    border-color: $color-1 transparent transparent transparent;
+    bottom: -10px;
+    left: 0;
+  }
+}

@@ -1,7 +1,18 @@
 <template>
-  <div>
-    <nuxt/>
-    <my-footer/>
+  <div id="app">
+    <h1 id="title">
+      Mana
+    </h1>
+
+    <header id="header">
+      Top oder so
+    </header>
+
+    <nav id="navigation">
+      Nav
+    </nav>
+
+    <nuxt id="content" />
   </div>
 </template>
 
