@@ -9,14 +9,16 @@
     "mana": "./server/server.js"
   },
   "scripts": {
-    "client:build": "nuxt build",
-    "client:dev": "nuxt",
+    "build": "nuxt build",
+    "dev": "NODE_ENV=dev server/server.js",
     "prepublishOnly": "client:build"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
     "dockerode": "^2.5.5",
     "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "nuxt": "^1.4.1",
     "redis": "^2.8.0"
   },

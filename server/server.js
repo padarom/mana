@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
-const app = require('express')()
+const express = require('express')
+const bodyParser = require('body-parser')
 const { Nuxt, Builder } = require('nuxt')
+const session = require('express-session')
 const path = require('path')
 const os = require('os')
 
@@ -9,7 +11,16 @@ const port = process.env.PORT || 3000
 const home = process.env.MANA_HOME || path.resolve(os.homedir(), '.mana')
 console.log('home is at', home)
 
+const app = express()
+app.use(session({
+  secret: 'super-secret-key',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { maxAge: 60000 }
+}))
+
 app.set('port', port)
+app.use(bodyParser.json())
 app.use('/api', require('./api/index'))
 
 const config = require('../nuxt.config.js')
