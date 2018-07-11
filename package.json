@@ -16,6 +16,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "dirty": "^1.1.0",
     "dockerode": "^2.5.5",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
