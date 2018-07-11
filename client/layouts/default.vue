@@ -5,59 +5,29 @@
     </h1>
 
     <header id="header">
-      Top oder so
+      <a href="#" class="user">
+        Your Username <img class="avatar" src="https://placehold.it/40x40">
+      </a>
+      <a href="#">
+        Settings
+      </a>
+      <a href="#">
+        Sign out
+      </a>
     </header>
 
-    <nav id="navigation">
-      Nav
-    </nav>
+    <server-navigation id="navigation"></server-navigation>
 
     <nuxt id="content" />
   </div>
 </template>
 
 <script>
-import MyFooter from '~/components/Footer.vue'
+import ServerNavigation from '~/components/Navigation.vue'
 
 export default {
   components: {
-    MyFooter
+    ServerNavigation
   }
 }
 </script>
-
-<style>
-.container
-{
-  margin: 0;
-  width: 100%;
-  padding: 100px 0;
-  text-align: center;
-}
-
-.button, .button:visited
-{
-  display: inline-block;
-  color: black;
-  letter-spacing: 1px;
-  background-color: #fff;
-  border: 2px solid #000;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 15px 45px;
-}
-
-.button:hover, .button:focus
-{
-  color: #fff;
-  background-color: #000;
-}
-
-.title
-{
-  color: #000;
-  font-weight: 300;
-  font-size: 2.5em;
-  margin: 0;
-}
-</style>

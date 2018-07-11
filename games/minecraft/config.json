@@ -1,0 +1,4 @@
+{
+    "name": "Minecraft",
+    "files": ["Dockerfile", "download.sh"]
+}
