@@ -1,4 +1,7 @@
 const pkg = require('../package')
+const { resolve } = require('path')
+
+console.warn(resolve(__dirname, 'client/'));
 
 module.exports = {
   mode: 'universal',
@@ -23,10 +26,13 @@ module.exports = {
   */
   loading: { color: '#fff' },
 
+  srcDir: resolve(__dirname, 'client/'),
+
   /*
   ** Global CSS
   */
   css: [
+    '@/assets/stylus/main.styl'
   ],
 
   /*
