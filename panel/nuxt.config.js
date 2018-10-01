@@ -6,9 +6,8 @@ console.warn(resolve(__dirname, 'client/'));
 module.exports = {
   mode: 'universal',
 
-  /*
-  ** Headers of the page
-  */
+  srcDir: resolve(__dirname, 'client/'),
+
   head: {
     title: pkg.name,
     meta: [
@@ -21,48 +20,29 @@ module.exports = {
     ]
   },
 
-  /*
-  ** Customize the progress-bar color
-  */
   loading: { color: '#fff' },
 
-  srcDir: resolve(__dirname, 'client/'),
-
-  /*
-  ** Global CSS
-  */
   css: [
     '@/assets/stylus/main.styl'
   ],
 
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [
   ],
 
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
 
-  /*
-  ** Axios module configuration
-  */
+  router: {
+    middleware: ['auth']
+  },
+
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
-  /*
-  ** Build configuration
-  */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
     extend (config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && process.client) {
