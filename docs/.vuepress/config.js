@@ -7,6 +7,7 @@ module.exports = {
                 title: 'Administration',
                 collapsable: false,
                 children: [
+                    '/admin/introduction',
                     '/admin/installation',
                     '/admin/configuration',
                     '/admin/daemon',
