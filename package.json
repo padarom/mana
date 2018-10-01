@@ -1,31 +1,35 @@
 {
-  "name": "mana-tool",
+  "name": "nucleus-panel",
   "version": "1.0.0",
   "description": "Gameserver management based on docker",
-  "main": "index.js",
   "author": "Christopher Mühl <christopher@padarom.io>",
   "license": "CC-BY-4.0",
   "bin": {
-    "mana": "./server/server.js"
+    "nucleus": "./panel/server/index.js",
+    "nucleusd": "./daemon/index.js"
   },
   "scripts": {
     "build": "nuxt build",
-    "dev": "NODE_ENV=dev server/server.js",
-    "prepublishOnly": "client:build"
+    "dev": "NODE_ENV=dev panel/server/index.js",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.3.3",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "dirty": "^1.1.0",
     "dockerode": "^2.5.5",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
-    "nuxt": "^1.4.1",
+    "nuxt": "^2.0",
     "redis": "^2.8.0",
     "socket.io": "^2.1.1"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "eslint": "^4.3.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-loader": "^1.9.0",
@@ -37,6 +41,7 @@
     "node-sass": "^4.9.2",
     "sass-loader": "^7.0.3",
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2"
+    "stylus-loader": "^3.0.2",
+    "vuepress": "^0.14.4"
   }
 }
