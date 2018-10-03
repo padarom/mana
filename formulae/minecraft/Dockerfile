@@ -1,7 +1,7 @@
 FROM openjdk:8u171-jre-alpine
 
 LABEL author "Christopher Mühl"
-LABEL mana.game "minecraft"
+LABEL nucleus.game "minecraft"
 
 RUN apk add -U curl jq && \
     rm -rf /var/cache/apk/*

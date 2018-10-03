@@ -1,21 +1,19 @@
 <template>
   <div id="app">
-    <h1 id="title">
-      Mana
-    </h1>
-
-    <header id="header">
-      <a href="#" class="user">
-        Your Username <img class="avatar" src="https://placehold.it/40x40">
-      </a>
-      <a href="#">
-        Settings
-      </a>
-      <a href="#">
-        Sign out
-      </a>
+    <header>
+      <nav>
+        <ul>
+          <li class="active">Dashboard</li>
+          <li>Servers</li>
+          <li>Nodes</li>
+          <li>Users</li>
+          <li class="user">
+            <a>user@example.org</a>
+          </li>
+        </ul>
+      </nav>
     </header>
-
+    
     <server-navigation id="navigation"></server-navigation>
 
     <nuxt id="content" />

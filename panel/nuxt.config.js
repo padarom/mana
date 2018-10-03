@@ -31,11 +31,11 @@ module.exports = {
 
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/auth'
+    // '@nuxtjs/auth'
   ],
 
   router: {
-    middleware: ['auth']
+  //  middleware: ['auth']
   },
 
   axios: {
